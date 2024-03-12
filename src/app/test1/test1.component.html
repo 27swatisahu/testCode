@@ -1,0 +1,19 @@
+<p>Accounts</p><hr/>
+<button>Refresh</button>
+<button (click)="sortingData()">Sort by Asc</button>
+
+
+<div *ngFor="let x of data">
+    <button (click)="deleteData(x.id)">Delete</button>
+    <label> {{x.id}} </label>
+    <label> {{x.type}} </label>
+    <label> {{x.balance}} </label>
+</div>
+
+<form [formGroup]="test1" (submit)="addData()">
+<label>Account type</label>
+<input type="text" formControlName="type"/>
+<label>Balance</label>
+<input type="text" formControlName="balance"/>
+<button type="submit">Add</button>
+</form>
